@@ -1,0 +1,13 @@
+{
+  "name": "2026-future-tech-dashboard",
+  "version": "1.0.0",
+  "description": "2026 Tech Horizon Dashboard - Cyberpunk Interface",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server --port=3000 --no-browser",
+    "dev": "live-server --port=3000 --watch=. --no-browser"
+  },
+  "keywords": ["dashboard", "2026", "future", "cyberpunk", "tech"],
+  "author": "Tech Horizon",
+  "license": "MIT"
+}

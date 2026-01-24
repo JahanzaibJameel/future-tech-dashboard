@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 TECH HORIZON | FUTURE DASHBOARD</title>
+    
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&family=Exo+2:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Favicon (prevents 404 error) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
+    
+    <!-- Preload scripts -->
+    <script>
+        // Create sound placeholders to prevent 403 errors
+        function createAudioPlaceholders() {
+            if (!window.AudioContext && !window.webkitAudioContext) return;
+            
+            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            
+            // Create placeholder sounds programmatically
+            const sounds = {
+                hover: () => {
+                    const oscillator = audioContext.createOscillator();
+                    const gainNode = audioContext.createGain();
+                    oscillator.connect(gainNode);
+                    gainNode.connect(audioContext.destination);
+                    oscillator.frequency.value = 800;
+                    oscillator.type = 'sine';
+                    gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+                    gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.1);
+                    oscillator.start(audioContext.currentTime);
+                    oscillator.stop(audioContext.currentTime + 0.1);
+                },
+                click: () => {
+                    const oscillator = audioContext.createOscillator();
+                    const gainNode = audioContext.createGain();
+                    oscillator.connect(gainNode);
+                    gainNode.connect(audioContext.destination);
+                    oscillator.frequency.value = 1200;
+                    oscillator.type = 'square';
+                    gainNode.gain.setValueAtTime(0.5, audioContext.currentTime);
+                    gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.05);
+                    oscillator.start(audioContext.currentTime);
+                    oscillator.stop(audioContext.currentTime + 0.05);
+                }
+            };
+            
+            window.placeholderSounds = sounds;
+        }
+        
+        // Initialize when page loads
+        window.addEventListener('DOMContentLoaded', createAudioPlaceholders);
+    </script>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loading-screen">
+        <div class="loading-content">
+            <div class="quantum-loader">
+                <div class="quantum-sphere"></div>
+                <div class="quantum-ring"></div>
+                <div class="quantum-particle"></div>
+            </div>
+            <h2 class="loading-text">INITIALIZING QUANTUM INTERFACE</h2>
+            <div class="loading-progress">
+                <div class="progress-bar" id="progress-bar"></div>
+                <div class="progress-text" id="progress-text">0%</div>
+            </div>
+            <div class="loading-message">
+                <span class="loading-message-text" id="loading-message">Calibrating neural networks...</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Cyber Header -->
+        <header class="cyber-header">
+            <div class="header-grid">
+                <div class="logo-section">
+                    <div class="logo-container">
+                        <div class="logo-glow"></div>
+                        <div class="logo-main">
+                            <span class="logo-icon">⚡</span>
+                            <h1 class="logo-text">
+                                <span class="logo-2026">2026</span>
+                                <span class="logo-tech">TECH HORIZON</span>
+                            </h1>
+                        </div>
+                        <div class="logo-subtitle">
+                            <span class="glitch-text" data-text="FUTURE DASHBOARD">FUTURE DASHBOARD</span>
+                        </div>
+                    </div>
+                    
+                    <div class="datetime-display">
+                        <div class="date-display" id="cyber-date">LOADING...</div>
+                        <div class="time-display" id="cyber-time">
+                            <span class="time-digital">--:--:--</span>
+                            <span class="time-quantum">.000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-panel">
+                    <div class="system-status">
+                        <div class="status-indicators">
+                            <div class="status-item online">
+                                <div class="status-led"></div>
+                                <span>SYSTEM ONLINE</span>
+                            </div>
+                            <div class="status-item quantum">
+                                <div class="status-led"></div>
+                                <span>QUANTUM LINK</span>
+                            </div>
+                            <div class="status-item ai">
+                                <div class="status-led"></div>
+                                <span>AI ACTIVE</span>
+                            </div>
+                        </div>
+                        <div class="status-bar">
+                            <div class="status-progress"></div>
+                        </div>
+                    </div>
+
+                    <div class="header-controls">
+                        <div class="control-group">
+                            <div class="cyber-slider">
+                                <label for="volume-control">AMBIENCE</label>
+                                <input type="range" id="volume-control" min="0" max="100" value="30">
+                            </div>
+                            
+                            <div class="control-buttons">
+                                <button class="cyber-btn small" id="theme-toggle">
+                                    <i class="fas fa-adjust"></i>
+                                    <span class="btn-glow"></span>
+                                </button>
+                                <button class="cyber-btn small" id="fullscreen-toggle">
+                                    <i class="fas fa-expand"></i>
+                                    <span class="btn-glow"></span>
+                                </button>
+                                <button class="cyber-btn small danger" id="emergency-stop">
+                                    <i class="fas fa-power-off"></i>
+                                    <span class="btn-glow"></span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="user-profile-cyber">
+                            <div class="profile-hologram">
+                                <div class="hologram-avatar">
+                                    <!-- Avatar will be generated by JavaScript -->
+                                </div>
+                                <div class="profile-info">
+                                    <span class="profile-name">ADMIN: ZERO</span>
+                                    <span class="profile-access">QUANTUM CLEARANCE</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content Grid -->
+        <main class="cyber-main">
+            <!-- Left Sidebar - Navigation -->
+            <nav class="cyber-nav">
+                <div class="nav-portal">
+                    <div class="portal-glow"></div>
+                    <div class="nav-items">
+                        <div class="nav-item active" data-section="dashboard">
+                            <div class="nav-icon">
+                                <i class="fas fa-chart-network"></i>
+                            </div>
+                            <span class="nav-text">DASHBOARD</span>
+                            <div class="nav-indicator"></div>
+                        </div>
+                        
+                        <div class="nav-item" data-section="ai">
+                            <div class="nav-icon">
+                                <i class="fas fa-brain-circuit"></i>
+                            </div>
+                            <span class="nav-text">NEURAL AI</span>
+                            <div class="nav-indicator"></div>
+                        </div>
+                        
+                        <div class="nav-item" data-section="quantum">
+                            <div class="nav-icon">
+                                <i class="fas fa-atom"></i>
+                            </div>
+                            <span class="nav-text">QUANTUM CORE</span>
+                            <div class="nav-indicator"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- System Monitor -->
+                <div class="system-monitor">
+                    <h3 class="monitor-title">SYSTEM MONITOR</h3>
+                    <div class="monitor-grid">
+                        <div class="monitor-item">
+                            <div class="monitor-label">CPU</div>
+                            <div class="monitor-bar">
+                                <div class="monitor-fill" style="width: 78%"></div>
+                            </div>
+                            <div class="monitor-value">78%</div>
+                        </div>
+                        <div class="monitor-item">
+                            <div class="monitor-label">MEM</div>
+                            <div class="monitor-bar">
+                                <div class="monitor-fill" style="width: 64%"></div>
+                            </div>
+                            <div class="monitor-value">64%</div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Center Content - Dashboard -->
+            <div class="dashboard-grid">
+                <!-- Stats Cards -->
+                <section class="cyber-card stats-grid">
+                    <div class="card-header">
+                        <h3><i class="fas fa-chart-line"></i> QUANTUM METRICS</h3>
+                    </div>
+                    
+                    <div class="stats-container">
+                        <div class="quantum-stat" data-type="qubits">
+                            <div class="stat-visual">
+                                <div class="quantum-visual" id="qubit-visual"></div>
+                            </div>
+                            <div class="stat-info">
+                                <div class="stat-value">1,024</div>
+                                <div class="stat-label">ACTIVE QUBITS</div>
+                            </div>
+                        </div>
+                        
+                        <div class="quantum-stat" data-type="ai">
+                            <div class="stat-visual">
+                                <div class="wave-visual" id="wave-visual"></div>
+                            </div>
+                            <div class="stat-info">
+                                <div class="stat-value">99.7%</div>
+                                <div class="stat-label">AI ACCURACY</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- AI Assistant -->
+                <section class="cyber-card ai-assistant-panel">
+                    <div class="card-header">
+                        <h3><i class="fas fa-robot"></i> NEXUS AI</h3>
+                    </div>
+                    
+                    <div class="ai-console">
+                        <div class="console-output" id="ai-console">
+                            <div class="console-line ai">NEXUS: System initialized</div>
+                        </div>
+                        
+                        <div class="console-input">
+                            <input type="text" placeholder="Type command..." id="ai-input">
+                            <button class="cyber-btn send" id="ai-send">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Data Visualization -->
+                <section class="cyber-card visualization-panel">
+                    <div class="card-header">
+                        <h3><i class="fas fa-cube"></i> TECH VISUALIZATION</h3>
+                    </div>
+                    
+                    <div class="visualization-container">
+                        <div class="placeholder-visual">
+                            <div class="cyber-cube"></div>
+                            <div class="cyber-sphere"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Sidebar -->
+            <aside class="cyber-sidebar">
+                <div class="cyber-card alert-panel">
+                    <div class="card-header">
+                        <h3><i class="fas fa-exclamation-triangle"></i> ALERTS</h3>
+                    </div>
+                    
+                    <div class="alert-list">
+                        <div class="alert-item info">
+                            <div class="alert-icon">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="alert-content">
+                                <div class="alert-title">SYSTEM READY</div>
+                                <div class="alert-time">Just now</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </main>
+
+        <!-- Footer -->
+        <footer class="cyber-footer">
+            <div class="footer-grid">
+                <div class="footer-status">
+                    <div class="status-item">
+                        <span class="status-label">SYSTEM UPTIME</span>
+                        <span class="status-value" id="uptime-counter">00:00:00</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Script Loading -->
+    <!-- Load Chart.js first since it's used for charts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
+    
+    <!-- Load other dependencies -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
+    <!-- Load Howler.js for audio -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+    
+    <!-- Load our main script last -->
+    <script src="script.js"></script>
+</body>
+</html>
