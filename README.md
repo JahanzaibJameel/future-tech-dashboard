@@ -191,7 +191,7 @@ Type commands inside the NEXUS terminal.
 ├── index.html
 ├── style.css
 ├── script.js
-├── load-cdn.js
+├── lib/cdn.js
 └── README.md
 ```
 
@@ -202,7 +202,7 @@ Type commands inside the NEXUS terminal.
 | `index.html` | Main application layout |
 | `style.css` | Cyberpunk styles |
 | `script.js` | Dashboard logic |
-| `load-cdn.js` | CDN dependency loader |
+| `/lib/cdn.js` | CDN dependency loader |
 | `README.md` | Project documentation |
 
 ---
@@ -375,7 +375,7 @@ See the **LICENSE** file for complete details.
 
 **Crafted with ⚡ passion, innovation, and modern web technologies.**
 
-Made with ❤️ by **Your Name**
+Made with ❤️ by **Muhammad jahanzaib**
 
 ⭐ If you enjoy this project, consider giving it a star!
 
