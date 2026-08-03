@@ -119,7 +119,7 @@ No backend or installation is required.
 ### Clone the repository
 
 ```bash
-git clone https://github.com/your-username/2026-tech-horizon.git
+git clone https://github.com/JahanzaibJameel/future-tech-dashboard/
 ```
 
 ### Navigate into the project
